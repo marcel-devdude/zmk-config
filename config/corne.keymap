@@ -33,7 +33,25 @@
 
         de_ae {
             bindings = <&de_ae>;
-            key-positions = <13 4>;
+            key-positions = <13 3>;
+            layers = <0>;
+        };
+
+        de_oe {
+            bindings = <&de_oe>;
+            key-positions = <9 3>;
+            layers = <0>;
+        };
+
+        de_ue {
+            bindings = <&de_ue>;
+            key-positions = <7 3>;
+            layers = <0>;
+        };
+
+        de_eszett {
+            bindings = <&de_eszett>;
+            key-positions = <14 3>;
             layers = <0>;
         };
     };
