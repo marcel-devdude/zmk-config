@@ -73,13 +73,13 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
         app_vscode {
             bindings = <&vscode>;
-            key-positions = <13 14 15 16>;
+            key-positions = <13 14>;
             layers = <0>;
         };
 
         app_chrome {
             bindings = <&chrome>;
-            key-positions = <19 20 21 22>;
+            key-positions = <15 16>;
             layers = <0>;
         };
 
@@ -115,7 +115,9 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <&kp>, <&kp>;
         };
 
-        # First argument is the kp on hold, second on tap
+        /* 
+         * First argument is the kp on hold, second on tap 
+         */
 	    td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             label = "TAPDANCE";
