@@ -1,0 +1,112 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
+layers:
+  default: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, '&ctrl_cmd', '&td_ae', S, D, F, G, H, J, K, L, ;, '''', LSHFT, Y, X, C, V, B, N, M, ',', ., /, ESC, LEFT ALT,
+    lower, SPACE, RET, raise, '&cmd_space']
+  lower:
+  - TAB
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - BSPC
+  - BT CLR
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LGUI
+  - {type: held}
+  - SPACE
+  - RET
+  - {t: ▽, type: trans}
+  - RALT
+  raise:
+  - TAB
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - '%'
+  - ^
+  - '&'
+  - (
+  - )
+  - '*'
+  - BSPC
+  - LCTRL
+  - '&euro_sign'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - '='
+  - '['
+  - ']'
+  - \
+  - '`'
+  - LSHFT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - _
+  - +
+  - '{'
+  - '}'
+  - '|'
+  - '~'
+  - LGUI
+  - {t: ▽, type: trans}
+  - SPACE
+  - RET
+  - {type: held}
+  - RALT
+combos:
+- p: [13, 3]
+  k: '&de_ae'
+  l: [default]
+- p: [9, 3]
+  k: '&de_oe'
+  l: [default]
+- p: [7, 3]
+  k: '&de_ue'
+  l: [default]
+- p: [14, 3]
+  k: '&de_eszett'
+  l: [default]
+- p: [13, 14, 15, 16]
+  k: '&vscode'
+  l: [default]
+- p: [19, 20, 21, 22]
+  k: '&chrome'
+  l: [default]
+- p: [14, 15]
+  k: '&switch_window'
+  l: [default]
