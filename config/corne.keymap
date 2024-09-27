@@ -47,6 +47,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
     combos {
         compatible = "zmk,combos";
 
+        /*
         de_ae {
             bindings = <&de_ae>;
             key-positions = <13 3>;
@@ -70,6 +71,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             key-positions = <14 3>;
             layers = <0>;
         };
+        */
 
         app_vscode {
             bindings = <&vscode>;
@@ -129,7 +131,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&mo 3>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
     };
 
@@ -144,8 +146,8 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&td_umlauts 0 TAB    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&ctrl_cmd            &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&td_umlauts 3 TAB    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&td LCTRL LGUI       &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT            &kp Y  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                             &kp LEFT_ALT  &mo 1  &kp SPACE    &kp RET  &mo 2  &cmd_space
             >;
