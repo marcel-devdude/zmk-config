@@ -107,10 +107,8 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -120,21 +118,18 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
          */
 	    td: tapdance {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
 
-        td_ae: td_ae {
+        td_umlauts: td_umlauts {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&de_ae>, <&kp>;
+            bindings = <&mo 3>, <&kp>;
         };
     };
 
@@ -149,10 +144,10 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q       &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&ctrl_cmd  &td_ae 0 A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Y       &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LEFT_ALT  &mo 1  &kp SPACE    &kp RET  &mo 2  &cmd_space
+&td_umlauts 0 TAB    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&ctrl_cmd            &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT            &kp Y  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+                            &kp LEFT_ALT  &mo 1  &kp SPACE    &kp RET  &mo 2  &cmd_space
             >;
         };
 
@@ -183,6 +178,15 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 &kp LCTRL  &euro_sign &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
 &kp LSHFT  &trans     &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
                               &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        de_umlats {
+            bindings = <
+&trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &de_ue
+&trans  &trans  &de_eszett  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &de_oe  &de_ae
+&trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
