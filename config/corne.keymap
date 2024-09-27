@@ -131,7 +131,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
         td_ae: td_ae {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&de_ae>, <&kp>;
