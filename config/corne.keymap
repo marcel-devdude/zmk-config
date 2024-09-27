@@ -185,10 +185,10 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
         de_umlauts {
             bindings = <
-&trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &de_ue
-&trans  &trans  &de_eszett  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &de_oe  &de_ae
-&trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &de_eszett  &de_ue
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &de_oe      &de_ae
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans      &trans
+                        &trans  &trans  &kp LSHIFT  &trans  &trans  &trans
             >;
         };
     };
