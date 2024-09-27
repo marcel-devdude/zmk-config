@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   default:
-  - {t: TAB, h: '&mo 3 0'}
+  - {t: TAB, h: de_umlats}
   - Q
   - W
   - E
@@ -13,7 +13,7 @@ layers:
   - O
   - P
   - BSPC
-  - '&ctrl_cmd'
+  - {t: LGUI, h: LCTRL}
   - A
   - S
   - D
@@ -130,7 +130,7 @@ layers:
   - {type: held}
   - RALT
   de_umlats:
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -173,18 +173,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
 combos:
-- p: [13, 3]
-  k: '&de_ae'
-  l: [default]
-- p: [9, 3]
-  k: '&de_oe'
-  l: [default]
-- p: [7, 3]
-  k: '&de_ue'
-  l: [default]
-- p: [14, 3]
-  k: '&de_eszett'
-  l: [default]
 - p: [13, 14]
   k: '&vscode'
   l: [default]
