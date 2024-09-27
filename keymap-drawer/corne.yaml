@@ -1,7 +1,48 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
-  default: [TAB, Q, W, E, R, T, Z, U, I, O, P, BSPC, '&ctrl_cmd', '&td_ae', S, D, F, G, H, J, K, L, ;, '''', LSHFT, Y, X, C, V, B, N, M, ',', ., /, ESC, LEFT ALT,
-    lower, SPACE, RET, raise, '&cmd_space']
+  default:
+  - TAB
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Z
+  - U
+  - I
+  - O
+  - P
+  - BSPC
+  - '&ctrl_cmd'
+  - {t: A, h: '&de_ae'}
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LSHFT
+  - Y
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - ESC
+  - LEFT ALT
+  - lower
+  - SPACE
+  - RET
+  - raise
+  - '&cmd_space'
   lower:
   - TAB
   - '1'
