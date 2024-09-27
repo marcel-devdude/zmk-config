@@ -31,7 +31,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <&kp LA(LC(LG(T)))>;
         };
 
-        chromd: chrome {
+        chrome: chrome {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LC(LG(C)))>;
