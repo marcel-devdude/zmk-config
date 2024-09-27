@@ -131,7 +131,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
+            bindings = <&sl>, <&kp>;
         };
     };
 
@@ -147,7 +147,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
             bindings = <
 &td_umlauts 3 TAB    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td LCTRL LGUI       &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&hm LCTRL LGUI       &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &kp LSHFT            &kp Y  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
                             &kp LEFT_ALT  &mo 1  &kp SPACE    &kp RET  &mo 2  &cmd_space
             >;
@@ -183,7 +183,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             >;
         };
 
-        de_umlats {
+        de_umlauts {
             bindings = <
 &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &de_ue
 &trans  &trans  &de_eszett  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &de_oe  &de_ae
