@@ -1,7 +1,7 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x6_3}
 layers:
   default:
-  - {t: TAB, h: de_umlats}
+  - {t: TAB, h: de_umlauts}
   - Q
   - W
   - E
@@ -129,7 +129,7 @@ layers:
   - RET
   - {type: held}
   - RALT
-  de_umlats:
+  de_umlauts:
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
