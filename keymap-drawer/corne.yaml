@@ -25,7 +25,7 @@ layers:
   - L
   - ;
   - ''''
-  - LSHFT
+  - {t: '&caps_word', h: LSHFT}
   - Y
   - X
   - C
@@ -80,12 +80,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - LGUI
+  - RALT
   - {type: held}
   - SPACE
   - RET
   - {t: ▽, type: trans}
-  - RALT
+  - LGUI
   raise:
   - TAB
   - '!'
@@ -123,12 +123,12 @@ layers:
   - '}'
   - '|'
   - '~'
-  - LGUI
+  - RALT
   - {t: ▽, type: trans}
   - SPACE
   - RET
   - {type: held}
-  - RALT
+  - LGUI
   de_umlauts:
   - {type: held}
   - {t: ▽, type: trans}
