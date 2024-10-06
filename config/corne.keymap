@@ -55,21 +55,21 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <&vscode>;
             key-positions = <13 14>;
             layers = <0>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
         };
 
         app_chrome {
             bindings = <&chrome>;
             key-positions = <15 16>;
             layers = <0>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
         };
 
         nav_switch_window {
             bindings = <&switch_window>;
             key-positions = <14 15>;
             layers = <0>;
-            require-prior-idle-ms = <100>;
+            require-prior-idle-ms = <300>;
         };
     };
 
