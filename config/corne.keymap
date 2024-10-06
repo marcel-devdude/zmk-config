@@ -51,7 +51,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <&vscode>;
             key-positions = <13 14>;
             layers = <0>;
-            require-prior-idle-ms: 100;
+            require-prior-idle-ms = 100;
         };
 
         app_chrome {
