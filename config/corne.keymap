@@ -47,48 +47,25 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
     combos {
         compatible = "zmk,combos";
 
-        /*
-        de_ae {
-            bindings = <&de_ae>;
-            key-positions = <13 3>;
-            layers = <0>;
-        };
-
-        de_oe {
-            bindings = <&de_oe>;
-            key-positions = <9 3>;
-            layers = <0>;
-        };
-
-        de_ue {
-            bindings = <&de_ue>;
-            key-positions = <7 3>;
-            layers = <0>;
-        };
-
-        de_eszett {
-            bindings = <&de_eszett>;
-            key-positions = <14 3>;
-            layers = <0>;
-        };
-        */
-
         app_vscode {
             bindings = <&vscode>;
             key-positions = <13 14>;
             layers = <0>;
+            require-prior-idle-ms: 100;
         };
 
         app_chrome {
             bindings = <&chrome>;
             key-positions = <15 16>;
             layers = <0>;
+            require-prior-idle-ms: 100;
         };
 
         nav_switch_window {
             bindings = <&switch_window>;
             key-positions = <14 15>;
             layers = <0>;
+            require-prior-idle-ms: 100;
         };
     };
 
