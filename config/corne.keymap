@@ -23,6 +23,10 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
   ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
               ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
 
+ &sk {
+    release-after-ms = <2000>;
+};
+
 / {
     macros {
         vscode: vscode {
@@ -118,10 +122,6 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             flavor = "tap-preferred";
             bindings = <&kp>, <&caps_word>;
         };
-    };
-
-    &sk {
-        release-after-ms = <2000>;
     };
 
     keymap {
