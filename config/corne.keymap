@@ -104,7 +104,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             #tapping-term-ms = <300>;
-            require-prior-idle-ms = <125>;
+            #require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -176,10 +176,10 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
         de_umlauts {
             bindings = <
-&trans  &trans  &switch_window  &kp LG(LA(LEFT))  &kp LG(LA(LEFT))  &trans      &trans  &trans  &trans  &trans  &de_eszett  &de_ue
-&trans  &trans  &chrome  &vscode  &trans  &trans      &trans  &trans  &trans  &trans  &de_oe      &de_ae
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans      &trans
-                        &trans  &trans  &kp LSHIFT  &trans  &trans  &trans
+&trans  &trans  &switch_window  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &trans      &trans  &trans  &trans  &trans  &de_eszett  &de_ue
+&trans  &trans  &chrome         &vscode           &trans             &trans      &trans  &trans  &trans  &trans  &de_oe      &de_ae
+&trans  &trans  &trans          &trans            &trans             &trans      &trans  &trans  &trans  &trans  &trans      &trans
+                                                    &trans  &trans  &kp LSHIFT  &trans  &trans  &trans
             >;
         };
     };
