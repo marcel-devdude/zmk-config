@@ -39,7 +39,7 @@ layers:
   - ESC
   - LEFT ALT
   - lower
-  - SPACE
+  - {t: SPACE, h: LGUI}
   - RET
   - raise
   - '&cmd_space'
