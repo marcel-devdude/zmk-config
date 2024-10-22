@@ -134,7 +134,7 @@ layers:
   - {t: ▽, type: trans}
   - '&switch_window'
   - Gui+Alt+ LEFT
-  - Gui+Alt+ LEFT
+  - Gui+Alt+ RIGHT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
