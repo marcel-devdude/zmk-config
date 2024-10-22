@@ -36,7 +36,7 @@ layers:
   - ','
   - .
   - /
-  - ESC
+  - {t: ESC, s: '`'}
   - LEFT ALT
   - lower
   - {t: SPACE, h: LGUI}
@@ -132,9 +132,9 @@ layers:
   de_umlauts:
   - {type: held}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&switch_window'
+  - Gui+Alt+ LEFT
+  - Gui+Alt+ LEFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -144,8 +144,8 @@ layers:
   - '&de_ue'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&chrome'
+  - '&vscode'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -172,13 +172,3 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-combos:
-- p: [13, 14]
-  k: '&vscode'
-  l: [default]
-- p: [15, 16]
-  k: '&chrome'
-  l: [default]
-- p: [14, 15]
-  k: '&switch_window'
-  l: [default]
