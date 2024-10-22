@@ -99,10 +99,12 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
         /* 
          * First argument is the kp on hold, second on tap 
          */
-	    td: tapdance {
+        td: tapdance {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            #tapping-term-ms = <150>;
+            tapping-term-ms = <300>;
+            require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -138,7 +140,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 &td_umlauts 3 TAB     &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &hm LCTRL LGUI        &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &mt_caps_word LSHFT 0 &kp Y  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                            &kp LEFT_ALT  &mo 1  &kp SPACE    &kp RET  &mo 2  &cmd_space
+                            &kp LEFT_ALT  &mo 1  &td LGUI SPACE    &kp RET  &mo 2  &cmd_space
             >;
         };
 
