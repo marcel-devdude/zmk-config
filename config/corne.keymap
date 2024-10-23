@@ -104,7 +104,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             #tapping-term-ms = <300>;
-            #require-prior-idle-ms = <125>;
+            require-prior-idle-ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
