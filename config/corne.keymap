@@ -111,6 +111,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
 
         sl_fn: sl_fn {
             compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
             tapping-term-ms = <200>;
             release-after-ms = <1000>;
             flavor = "hold-preferred";
