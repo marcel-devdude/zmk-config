@@ -25,7 +25,7 @@ layers:
   - L
   - ;
   - ''''
-  - {t: '&caps_word', h: LSHFT}
+  - LSHFT
   - Y
   - X
   - C
