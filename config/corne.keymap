@@ -114,10 +114,6 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <&kp>, <&kp>;
         };
 
-        lsl: lsl {
-
-        }
-
         sl_fn: sl_fn {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
