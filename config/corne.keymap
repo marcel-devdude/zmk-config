@@ -23,8 +23,13 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
   ╰───────────╮ 36  37  38 │ 39  40  41 ╭───────────╯ ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
               ╰────────────┴────────────╯                         ╰─────────────┴─────────────╯             */
 
- &sk {
+&sk {
     release-after-ms = <2000>;
+};
+
+&sl {
+    release-after-ms = <2000>;
+    ignore-modifiers;
 };
 
 / {
@@ -109,14 +114,16 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <&kp>, <&kp>;
         };
 
+        lsl: lsl {
+
+        }
+
         sl_fn: sl_fn {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            release-after-ms = <1000>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&sl>;
-            ignore-modifiers;
         };
 
         td_umlauts: td_umlauts {
@@ -164,7 +171,7 @@ ZMK_UNICODE_SINGLE(euro_sign, N2, N0, A, C)
             bindings = <
 &kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9      &kp N0   &kp BSPC
 &trans      &trans        &trans        &trans        &trans        &trans          &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT   &trans   &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6          &kp F7    &kp F8    &kp F9    &kp F10     &kp F11  &kp F12
+&kp LSHIFT  &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans      &trans   &trans
                                         &kp RALT      &trans        &kp SPACE       &kp RET   &trans    &kp LSHIFT
             >;
         };
