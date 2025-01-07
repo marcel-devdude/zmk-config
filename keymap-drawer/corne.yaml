@@ -38,7 +38,7 @@ layers:
   - /
   - {t: ESC, s: '`'}
   - LEFT ALT
-  - {t: de_umlauts, h: lower}
+  - {t: functional, h: lower}
   - {t: SPACE, h: LGUI}
   - RET
   - raise
@@ -210,7 +210,7 @@ layers:
   - {t: ▽, type: trans}
   - default
   - RALT
-  - {t: ▽, type: trans}
+  - {type: held}
   - SPACE
   - RET
   - {t: ▽, type: trans}
