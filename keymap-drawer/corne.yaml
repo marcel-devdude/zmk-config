@@ -80,12 +80,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - RALT
+  - LEFT ALT
   - {type: held}
   - SPACE
   - RET
   - {t: ▽, type: trans}
-  - LSHIFT
+  - LGUI
   raise:
   - TAB
   - '!'
