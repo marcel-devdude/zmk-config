@@ -9,13 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 
 /*
- * German characters use the native macOS "ABC" input source:
- *   ä/ö/ü = Option+U (dead key) + vowel, ß = Option+S, € = Option+Shift+2
- * (Unicode Hex Input was dropped: its Option+hex sequences leak into terminals
- * as Alt+F/Alt+D etc. and move the cursor / delete words.)
+ * The host uses the macOS "German" input source (same as the laptop keyboard).
+ * DE_* aliases map each character to the keycode that produces it there.
  */
-#define DE_SZ   LA(S)
-#define EURO    LA(LS(N2))
+#include "keys_de_mac.h"
 
 /*                                      42 KEY MATRIX / LAYOUT MAPPING
 
@@ -40,66 +37,30 @@
             bindings = <&kp LA(LC(LG(C)))>;
         };
 
+        // Cmd+< cycles windows of the current app on a German Mac layout
         switch_window: switch_window {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(LESS_THAN)>;
+            bindings = <&kp LG(DE_LT)>;
         };
 
-        /*
-         * Umlauts. The *_up variants run while Shift is held: Shift is released
-         * for the dead key (Option+Shift+U would print "¨"), then re-pressed so
-         * the vowel comes out uppercase and Shift stays held afterwards.
-         */
-        uml_a: uml_a {
+        // Dead keys + space, so ^ ` ~ are typed immediately
+        de_caret: de_caret {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LA(U) &kp A>;
+            bindings = <&macro_tap &kp DE_DEAD_CARET &kp SPACE>;
         };
 
-        uml_a_up: uml_a_up {
+        de_grave: de_grave {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp LA(U)>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp A>
-                ;
+            bindings = <&macro_tap &kp DE_DEAD_GRAVE &kp SPACE>;
         };
 
-        uml_o: uml_o {
+        de_tilde: de_tilde {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LA(U) &kp O>;
-        };
-
-        uml_o_up: uml_o_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp LA(U)>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp O>
-                ;
-        };
-
-        uml_u: uml_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp LA(U) &kp U>;
-        };
-
-        uml_u_up: uml_u_up {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_release &kp LSHFT>
-                , <&macro_tap &kp LA(U)>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp U>
-                ;
+            bindings = <&macro_tap &kp DE_DEAD_TILDE &kp SPACE>;
         };
     };
 
@@ -170,29 +131,43 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // keep-mods: Shift must reach the *_up macros, they handle it themselves
-        de_ae: de_ae {
+        /*
+         * Base-layer punctuation keeps US-style shift pairs (Shift+; = :, etc.),
+         * which the German layout would otherwise put elsewhere.
+         */
+        ms_semi: ms_semi {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&uml_a>, <&uml_a_up>;
-            mods = <(MOD_LSFT)>;
-            keep-mods = <(MOD_LSFT)>;
+            bindings = <&kp DE_SEMI>, <&kp DE_COLON>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        de_oe: de_oe {
+        ms_sqt: ms_sqt {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&uml_o>, <&uml_o_up>;
-            mods = <(MOD_LSFT)>;
-            keep-mods = <(MOD_LSFT)>;
+            bindings = <&kp DE_SQT>, <&kp DE_DQT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        de_ue: de_ue {
+        ms_comma: ms_comma {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&uml_u>, <&uml_u_up>;
-            mods = <(MOD_LSFT)>;
-            keep-mods = <(MOD_LSFT)>;
+            bindings = <&kp DE_COMMA>, <&kp DE_LT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ms_dot: ms_dot {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DE_DOT>, <&kp DE_GT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        ms_slsh: ms_slsh {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DE_SLSH>, <&kp DE_QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
@@ -202,14 +177,14 @@
         default_layer {
             // -------------------------------------------------------------------------------------
             // | TAB/UML |  Q  |  W  |  E  |  R  |  T  |   |  Z  |  U  |  I  |  O  |  P  | BSPC |
-            // | ESC/CTL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  |  ;  |  '   |
-            // |  SHFT   |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  | `ESC |
+            // | ESC/CTL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  | ; : | ' "  |
+            // |  SHFT   |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M  | , < | . > | / ? | ESC  |
             //                 | ALT | LWR | SPC/GUI |   | ENT | RSE | GUI/⌘SPC |
 
             bindings = <
-&td_umlauts 3 TAB     &kp Q  &kp W  &kp E         &kp R  &kp T        &kp Z    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td LCTRL ESC         &kp A  &kp S  &kp D         &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT             &kp Y  &kp X  &kp C         &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &gresc
+&td_umlauts 3 TAB     &kp Q     &kp W  &kp E         &kp R  &kp T        &kp DE_Z  &kp U  &kp I      &kp O    &kp P     &kp BSPC
+&td LCTRL ESC         &kp A     &kp S  &kp D         &kp F  &kp G        &kp H     &kp J  &kp K      &kp L    &ms_semi  &ms_sqt
+&kp LSHFT             &kp DE_Y  &kp X  &kp C         &kp V  &kp B        &kp N     &kp M  &ms_comma  &ms_dot  &ms_slsh  &kp ESC
                             &kp LEFT_ALT  &mo 1  &td LGUI SPACE      &kp RET  &mo 2  &cmd_space
             >;
         };
@@ -237,9 +212,9 @@
             //                    | ALT |     | SPC |   | ENT |     | GUI |
 
             bindings = <
-&kp TAB    &kp EXCL   &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp LPAR   &kp RPAR  &kp ASTRK &kp BSPC
-&kp LCTRL  &kp EURO &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans     &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
+&kp TAB    &kp DE_EXCL  &kp DE_AT  &kp DE_HASH  &kp DE_DLLR  &kp DE_PRCNT    &de_caret     &kp DE_AMPS   &kp DE_LPAR  &kp DE_RPAR  &kp DE_ASTRK  &kp BSPC
+&kp LCTRL  &kp DE_EURO  &trans     &trans       &trans       &trans          &kp DE_MINUS  &kp DE_EQUAL  &kp DE_LBKT  &kp DE_RBKT  &kp DE_BSLH   &de_grave
+&kp LSHFT  &trans       &trans     &trans       &trans       &trans          &kp DE_UNDER  &kp DE_PLUS   &kp DE_LBRC  &kp DE_RBRC  &kp DE_PIPE   &de_tilde
                               &kp LEFT_ALT  &trans  &kp SPACE  &kp RET    &trans     &kp LGUI
             >;
         };
@@ -252,9 +227,9 @@
             //                     |      |      | SHFT |   |     |     |     |
 
             bindings = <
-&trans  &trans  &switch_window  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &trans      &trans      &trans        &trans  &trans  &kp DE_SZ  &de_ue
-&trans  &trans  &chrome         &vscode           &trans             &trans      &trans      &trans        &trans  &trans  &de_oe      &de_ae
-&trans  &trans  &trans          &trans            &trans             &trans      &bt BT_CLR  &bt BT_SEL 0  &trans  &trans  &trans      &trans
+&trans  &trans  &switch_window  &kp LG(LA(LEFT))  &kp LG(LA(RIGHT))  &trans      &trans      &trans        &trans  &trans  &kp DE_SZ  &kp DE_UE
+&trans  &trans  &chrome         &vscode           &trans             &trans      &trans      &trans        &trans  &trans  &kp DE_OE  &kp DE_AE
+&trans  &trans  &trans          &trans            &trans             &trans      &bt BT_CLR  &bt BT_SEL 0  &trans  &trans  &trans     &trans
                                                     &trans  &trans  &kp LSHIFT  &trans  &trans  &trans
             >;
         };
