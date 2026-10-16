@@ -169,6 +169,13 @@
             bindings = <&kp DE_SLSH>, <&kp DE_QMARK>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        ms_esc: ms_esc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&de_grave>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     keymap {
@@ -178,13 +185,13 @@
             // -------------------------------------------------------------------------------------
             // | TAB/UML |  Q  |  W  |  E  |  R  |  T  |   |  Z  |  U  |  I  |  O  |  P  | BSPC |
             // | ESC/CTL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J  |  K  |  L  | ; : | ' "  |
-            // |  SHFT   |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M  | , < | . > | / ? | ESC  |
+            // |  SHFT   |  Y  |  X  |  C  |  V  |  B  |   |  N  |  M  | , < | . > | / ? | ESC ` |
             //                 | ALT | LWR | SPC/GUI |   | ENT | RSE | GUI/⌘SPC |
 
             bindings = <
 &td_umlauts 3 TAB     &kp Q     &kp W  &kp E         &kp R  &kp T        &kp DE_Z  &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td LCTRL ESC         &kp A     &kp S  &kp D         &kp F  &kp G        &kp H     &kp J  &kp K      &kp L    &ms_semi  &ms_sqt
-&kp LSHFT             &kp DE_Y  &kp X  &kp C         &kp V  &kp B        &kp N     &kp M  &ms_comma  &ms_dot  &ms_slsh  &kp ESC
+&kp LSHFT             &kp DE_Y  &kp X  &kp C         &kp V  &kp B        &kp N     &kp M  &ms_comma  &ms_dot  &ms_slsh  &ms_esc
                             &kp LEFT_ALT  &mo 1  &td LGUI SPACE      &kp RET  &mo 2  &cmd_space
             >;
         };

@@ -5,9 +5,10 @@
  * character the German Mac layout produces. Verified against the layout with
  * UCKeyTranslate.
  *
- * `<`/`>` sit on the ISO key (NUBS). This assumes macOS treats the Corne as an
- * ISO keyboard (System Settings → Keyboard → Keyboard Type). If it is set to
- * ANSI, `<` turns into `^` and you need to change the keyboard type.
+ * `<`/`>` depend on the keyboard type macOS assigns to the Corne. It has none
+ * stored, so macOS treats it as ANSI, where GRAVE produces `<`/`>` (and NUBS
+ * produces `^`/`°`). If the type is ever set to ISO, macOS swaps those two keys
+ * and DE_LT/DE_GT must become NUBS.
  *
  * Dead keys (^ ` ´ ~) are macros in corne.keymap that add a space, so they
  * print the character directly.
@@ -47,8 +48,8 @@
 #define DE_COLON  LS(DOT)
 #define DE_MINUS  FSLH
 #define DE_UNDER  LS(FSLH)
-#define DE_LT     NUBS
-#define DE_GT     LS(NUBS)
+#define DE_LT     GRAVE
+#define DE_GT     LS(GRAVE)
 
 /* Option layer */
 #define DE_AT     LA(L)

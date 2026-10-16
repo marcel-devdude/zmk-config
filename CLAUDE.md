@@ -22,7 +22,7 @@ A ZMK firmware user config for a wireless split Corne (42 keys, nice!nano v2 con
 ## Keymap notes
 
 - The host is macOS with the classic "German" input source (same as the laptop's built-in keyboard). ZMK keycodes are US-position names, so `config/keys_de_mac.h` defines `DE_*` aliases for the character each key produces there (e.g. `DE_Z` = `Y`, `DE_AT` = Option+L). Use `DE_*` names for anything that isn't a letter, digit or plain control key. The aliases were checked against the actual layout with `UCKeyTranslate`.
-- `^` `` ` `` `~` are dead keys on that layout; `&de_caret`/`&de_grave`/`&de_tilde` are macros that add a space. `<`/`>` (NUBS) depend on macOS treating the Corne as an ISO keyboard type.
+- `^` `` ` `` `~` are dead keys on that layout; `&de_caret`/`&de_grave`/`&de_tilde` are macros that add a space. `<`/`>` are sent as GRAVE because macOS treats the Corne as an ANSI keyboard (no stored keyboard type); with ISO, macOS swaps GRAVE and NUBS. Cmd+< (window switch) relies on the same key.
 - Base-layer `; ' , . /` are mod-morphs (`ms_*`) that keep US-style shift pairs (`:` `"` `<` `>` `?`).
 - Don't reintroduce Unicode Hex Input (zmk-helpers `HOST_OS 2`): its Option+hex sequences reach terminal apps as Alt+F/Alt+D and move the cursor or delete words.
 - Layers are referenced by index, so reordering layers breaks `&td_umlauts 3 TAB`, `&mo 1`, `&mo 2` and the `conditional_layers` node: 0 = default, 1 = lower, 2 = raise, 3 = de_umlauts (umlauts, app-launch macros, window switching, BT), 4 = functional (F-keys, reached by holding lower + raise).
