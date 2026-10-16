@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: corne_rotated, layout_name: LAYOUT_split_3x6_3}
+layout: {zmk_keyboard: corne}
 layers:
   default:
   - {t: TAB, h: de_umlauts}
@@ -38,7 +38,7 @@ layers:
   - /
   - {t: ESC, s: '`'}
   - LEFT ALT
-  - {t: functional, h: lower}
+  - lower
   - {t: SPACE, h: LGUI}
   - RET
   - raise
@@ -100,7 +100,7 @@ layers:
   - '*'
   - BSPC
   - LCTRL
-  - '&euro_sign'
+  - Alt+Sft+2
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -123,7 +123,7 @@ layers:
   - '}'
   - '|'
   - '~'
-  - RALT
+  - LEFT ALT
   - {t: ▽, type: trans}
   - SPACE
   - RET
@@ -140,8 +140,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&de_eszett'
-  - '&de_ue'
+  - Alt+S
+  - {t: '&uml_u', s: '&uml_u_up'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&chrome'
@@ -152,8 +152,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&de_oe'
-  - '&de_ae'
+  - {t: '&uml_o', s: '&uml_o_up'}
+  - {t: '&uml_a', s: '&uml_a_up'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -208,10 +208,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - default
-  - RALT
+  - {t: ▽, type: trans}
+  - LEFT ALT
   - {type: held}
   - SPACE
   - RET
-  - {t: ▽, type: trans}
+  - {type: held}
   - LGUI
