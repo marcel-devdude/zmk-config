@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A ZMK firmware user config for a wireless split Corne (42 keys, `nice_nano_v2` controllers, nice!view displays). There is no local build setup — firmware is built entirely by GitHub Actions.
+A ZMK firmware user config for a wireless split Corne (42 keys, nice!nano v2 controllers, nice!view displays). ZMK `main` is on Zephyr 4.1, so the board ID in `build.yaml` is `nice_nano//zmk` (the old `nice_nano_v2` no longer builds). There is no local build setup — firmware is built entirely by GitHub Actions.
 
 ## Build & CI
 
