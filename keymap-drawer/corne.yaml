@@ -7,7 +7,7 @@ layers:
   - E
   - R
   - T
-  - Z
+  - Y
   - U
   - I
   - O
@@ -23,20 +23,20 @@ layers:
   - J
   - K
   - L
-  - ;
-  - ''''
+  - {t: 'Sft+,', s: Sft+.}
+  - {t: Sft+\, s: Sft+2}
   - LSHFT
-  - Y
+  - Z
   - X
   - C
   - V
   - B
   - N
   - M
-  - ','
-  - .
-  - /
-  - {t: ESC, s: '`'}
+  - {t: ',', s: NUBS}
+  - {t: ., s: Sft+NUBS}
+  - {t: Sft+7, s: Sft+-}
+  - ESC
   - LEFT ALT
   - lower
   - {t: SPACE, h: LGUI}
@@ -88,41 +88,41 @@ layers:
   - LGUI
   raise:
   - TAB
-  - '!'
-  - '@'
-  - '#'
-  - $
-  - '%'
-  - ^
-  - '&'
-  - (
-  - )
-  - '*'
+  - Sft+1
+  - Alt+L
+  - \
+  - Sft+4
+  - Sft+5
+  - '&de_caret'
+  - Sft+6
+  - Sft+8
+  - Sft+9
+  - Sft+]
   - BSPC
   - LCTRL
-  - Alt+Sft+2
+  - Alt+E
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '-'
-  - '='
-  - '['
-  - ']'
-  - \
-  - '`'
+  - /
+  - Sft+0
+  - Alt+5
+  - Alt+6
+  - Alt+Sft+7
+  - '&de_grave'
   - LSHFT
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - _
-  - +
-  - '{'
-  - '}'
-  - '|'
-  - '~'
+  - Sft+/
+  - ']'
+  - Alt+8
+  - Alt+9
+  - Alt+7
+  - '&de_tilde'
   - LEFT ALT
   - {t: ▽, type: trans}
   - SPACE
@@ -140,8 +140,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Alt+S
-  - {t: '&uml_u', s: '&uml_u_up'}
+  - '-'
+  - '['
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&chrome'
@@ -152,8 +152,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&uml_o', s: '&uml_o_up'}
-  - {t: '&uml_a', s: '&uml_a_up'}
+  - ;
+  - ''''
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
