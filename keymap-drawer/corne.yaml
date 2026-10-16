@@ -33,10 +33,10 @@ layers:
   - B
   - N
   - M
-  - {t: ',', s: NUBS}
-  - {t: ., s: Sft+NUBS}
+  - {t: ',', s: '`'}
+  - {t: ., s: Sft+`}
   - {t: Sft+7, s: Sft+-}
-  - ESC
+  - {t: ESC, s: '&de_grave'}
   - LEFT ALT
   - lower
   - {t: SPACE, h: LGUI}
